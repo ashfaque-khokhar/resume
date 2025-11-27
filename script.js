@@ -8,6 +8,38 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Resume website loaded successfully!');
     
     // ===========================
+    // Download Resume as PDF
+    // ===========================
+    
+    const downloadBtn = document.getElementById('downloadBtn');
+    
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            // Set document title for PDF filename
+            const originalTitle = document.title;
+            document.title = 'Mohammad_Ashfaque_Khokhar_Resume';
+            
+            // Trigger print dialog (user can save as PDF)
+            window.print();
+            
+            // Restore original title after a short delay
+            setTimeout(function() {
+                document.title = originalTitle;
+            }, 1000);
+            
+            console.log('Download PDF triggered');
+        });
+        
+        // Keyboard accessibility
+        downloadBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    }
+    
+    // ===========================
     // Dark Mode / Light Mode Toggle
     // ===========================
     
