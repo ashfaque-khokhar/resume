@@ -1,5 +1,8 @@
 # Mohammad Ashfaque Khokhar - Resume Website
 
+https://ashfaque-khokhar.github.io/resume/
+
+
 A clean, simple, and professional resume website built with pure HTML5, CSS3, and vanilla JavaScript. Designed to match traditional resume layouts with modern web capabilities.
 
 ## 🚀 Features
