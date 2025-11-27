@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         downloadBtn.addEventListener('click', function() {
             // Set document title for PDF filename
             const originalTitle = document.title;
-            document.title = 'Mohammad_Ashfaque_Khokhar_Resume';
+            document.title = 'Ashfaque_Android_Flutter_4yrs_30_np';
             
             // Trigger print dialog (user can save as PDF)
             window.print();
