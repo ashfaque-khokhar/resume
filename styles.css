@@ -97,6 +97,16 @@ body {
     letter-spacing: -0.5px;
 }
 
+.header-left .logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header-left .logo a:hover {
+    opacity: 0.8;
+}
+
 .header-right {
     display: flex;
     align-items: center;
@@ -214,6 +224,16 @@ body {
     color: var(--primary-color);
     margin-bottom: var(--spacing-xs);
     letter-spacing: -0.5px;
+}
+
+.header-content h1 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header-content h1 a:hover {
+    opacity: 0.8;
 }
 
 .header-content .title {
