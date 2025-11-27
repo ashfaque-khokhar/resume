@@ -719,7 +719,7 @@ a {
 @media print {
     @page {
         size: A4;
-        margin: none;
+        margin: none !important;
     }
     
     * {
