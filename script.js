@@ -8,6 +8,57 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Resume website loaded successfully!');
     
     // ===========================
+    // Dark Mode / Light Mode Toggle
+    // ===========================
+    
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    
+    // Toggle theme function
+    function toggleTheme() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Add a subtle animation class
+        document.body.style.transition = 'all 0.3s ease';
+        
+        console.log(`Theme switched to: ${newTheme}`);
+    }
+    
+    // Add click event listener to theme toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+        
+        // Keyboard accessibility for theme toggle
+        themeToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+    
+    // Detect system theme preference changes
+    if (window.matchMedia) {
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        darkModeQuery.addEventListener('change', function(e) {
+            // Only auto-switch if user hasn't manually set a preference
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', newTheme);
+            }
+        });
+    }
+    
+    // ===========================
     // Smooth Scrolling for Anchor Links
     // ===========================
     
